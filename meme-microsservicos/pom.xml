@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 1. Adicionando o Spring Boot Starter Parent -->
+    <!-- Ele gerencia as versões das dependências para nós. -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.5</version> <!-- Usaremos uma versão estável -->
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 2. Informações do nosso projeto principal -->
+    <groupId>com.example</groupId>
+    <artifactId>meme-microsservicos</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging> <!-- MUITO IMPORTANTE: O pai deve ter packaging 'pom' -->
+    <name>meme-microsservicos</name>
+    <description>Projeto agregador para os microsserviços de memes.</description>
+
+    <!-- 3. Propriedades globais -->
+    <properties>
+        <java.version>11</java.version> <!-- Definindo a versão do Java -->
+    </properties>
+
+    <!-- 4. Módulos que fazem parte deste projeto -->
+    <!-- O Maven sabe que precisa gerenciar o user-service, category-service e meme-service -->
+    <modules>
+        <module>user-service</module>
+        <module>category-service</module>
+        <module>meme-service</module>
+    </modules>
+
+</project>
